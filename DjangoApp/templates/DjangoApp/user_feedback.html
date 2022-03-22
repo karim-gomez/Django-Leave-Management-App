@@ -1,0 +1,60 @@
+{% extends 'DjangoApp/base.html' %}
+{% load static %}
+
+{% block head %} 
+<title>Feedback</title>
+{% endblock %}
+
+
+{% block body %}
+</br>
+	<div class="container mt-2">
+		<h3 style="text-align:center;">Admin Response</h3>
+          	<hr class="intro-divider">
+
+			  <div class="row">
+				<div class="col-md-8 mx-auto">
+					<div class="card card-body">
+							<form method="POST" action="">
+								{% csrf_token %}
+								<!--  -->
+								<label><b>Email ID</b></label>
+								<div class="input-group mb-2">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+									</div>
+									
+									<input type="email" name="email" class="form-control" value="{{leave_id.customer.user.username}}" readonly >
+		
+								</div>
+								
+								<label><b>Pick Status</b></label>
+								<div class="form-group mb-2">
+									<select class="form-control" name="leave_status">
+										<option selected > Select status ></option>
+										<option value="Accept">Accept</option>
+										<option value="Reject">Reject</option>
+									</select>
+		
+								</div>	
+		
+								<label><b>Note</b></label>
+								<div class="form-group mb-2">
+									<textarea class="form-control" name="leave_feedback" rows="4" required></textarea>
+		
+								</div>	
+								
+								<div class="card-footer">
+									<input type="submit" class="btn btn-primary ">
+								</div>
+							
+							</form>
+							
+						</div>
+				  </div>
+			  </div>
+		
+
+	</div>
+	
+{% endblock body %}

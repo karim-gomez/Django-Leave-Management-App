@@ -1,0 +1,59 @@
+{% extends 'DjangoApp/base.html' %}
+
+{% load static %}
+
+{% block head %} 
+<title>Apply Leave</title>
+{% endblock %}
+
+
+{% block body %}
+{%  include 'DjangoApp/messages.html' %}
+
+</br>
+	<div class="container mt-2">
+		<h3 style="text-align:center; "> Leave Page </h3>
+          	<hr class="intro-divider">
+            <div class="row">
+                <div class="col mt-2">
+                    <div class="card card-body">
+
+                       <div class="card-header mb-3 bg-dark text-white">
+                           Apply for Leave
+                       </div>
+                        <form method="POST" action="{% url 'add_leave' %}">
+                            {% csrf_token %}
+                            <!--  -->
+                            <label><b>Leave Date</b></label>
+                            <div class="form-group mb-2">
+                                <input type="date" name="leave_date" class="form-control" required>
+                            </div>
+                            
+                            <label><b>Reason</b></label>
+                            <div class="form-group mb-2">
+                                <textarea class="form-control" name="leave_msg" rows="4" required></textarea>
+                            </div>
+                            
+
+                            <div class="card-footer">
+                                <input type="submit" class="btn btn-primary">
+
+
+                            </div>
+                            
+                        </form>
+
+                    </div>
+				
+			    </div>
+            </div>
+
+            
+
+                
+
+           
+		
+	</div>
+	
+{% endblock body %}

@@ -1,0 +1,29 @@
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+
+        <div class="alert alert {{ message.tags }}">
+
+            <button type="button" class='colse' data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+                <!-- <i class="fa fa-xing" aria-hidden="true">x</i> -->
+            </button>
+            {{ message }}
+        </div> 
+
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+
+<!-- <div class="{{ message.tags }}">
+            <button type="button" class='colse' data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">x</span>
+            </button>
+            {{ message }}
+        </div> -->
+
+
+

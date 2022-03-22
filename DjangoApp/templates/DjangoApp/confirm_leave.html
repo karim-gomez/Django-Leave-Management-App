@@ -1,0 +1,54 @@
+{% extends 'DjangoApp/base.html' %}
+
+{% load static %}
+
+{% block head %} 
+<title>Confirm Leaves</title>
+{% endblock %}
+
+
+{% block body %}
+{%  include 'DjangoApp/messages.html' %}
+
+
+    <div class="container mb-2">
+        <div class="content-section pt-5">
+          <h3 style="text-align:center;"> Confirmed Leaves</h3>
+         
+          <hr class="intro-divider">
+
+          <div class="center">
+            <!-- To create a responsive table (style="overflow-x:auto;") has been add  -->
+            <div style="overflow-x:auto;">
+              <table id="data" class="table table-hover table-striped table-bordered pt-2 ">
+      
+                <thead class="bg-dark text-white">
+                    <th > Email </th>
+                    <th > Leave Date </th>
+                    <th > Leave Message </th>
+                    <th > Leave Status </th>
+                  </tr>
+                </thead>
+            
+              {% for row in leave_report %}
+                <tr>
+                  <td> {{row.customer.user.username}} </td>
+                  <td> {{row.leave_date}} </td>
+                  <td> {{row.leave_message}} </td>
+
+                  <td>
+                       {{row.leave_status}}
+                   
+                    </td>
+
+                </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock body %}

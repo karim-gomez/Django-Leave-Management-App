@@ -1,0 +1,31 @@
+{% extends 'DjangoApp/base.html' %}
+{% load static %}
+
+{% block head %} 
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+
+{%  include 'DjangoApp/messages.html' %}
+
+<br>
+<div class="container">
+	<div class="row">
+        <div class="col">
+            <div class="jumbotron mt-3">
+                <h1 class="text-center">Django Leave Management App</h1>
+                <hr class="mt-3">
+            
+                <br>
+                <p class="lead mt-3">
+                    <a class="btn btn-success btn-lg " href="{% url 'login' %}" role="button">Jump to Login page</a>
+                </p>
+            </div>
+        </div>
+			
+	</div>
+</div>
+
+
+{% endblock body %}

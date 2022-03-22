@@ -1,0 +1,67 @@
+{% extends 'DjangoApp/base.html' %}
+{% load static %}
+
+{% block head %} 
+<title>Profile</title>
+{% endblock %}
+
+{% block body %}
+{%  include 'DjangoApp/messages.html' %}
+
+
+    
+<br>
+<div class="container ">
+	<!-- 1 row 2 cols -->
+	<div class="card card-body">
+		<h3 style="text-align: center">User Profile</h3>
+
+		<div class="row mt-4">
+			<div class="col-md-3">
+				<div class="card card-body">
+					<hr>
+					<h4 style="text-align: center">User Profile</h4>
+					<hr>
+					<img height="150px" class="profile_img" src="{% static '/images/generaluser.png' %}" >
+					<!-- {% static '/images/generaluser.png' %} -->
+					
+				</div>
+			</div>
+	
+			<div class="col-md-7">
+				<table class="table table-hover table-striped table-bordered pt-2 ">
+
+						<thead class="">
+							<tr>
+								<th>First Name: </th>
+								<th>Phone No: </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								
+								<td>{{customer.user.first_name}}</td>
+								<td>{{customer.phone_no}}</td>
+								
+							</tr>
+						</tbody>
+					</table>
+					
+					
+					<form method="POST" action="">
+						{% csrf_token %}
+						<!-- the Edit functionality hasnt been done yet -->
+						
+					<input class="btn btn-primary mt-4" type="submit" name="edit" value="Edit">
+					</form>
+
+				</div>
+			</div>
+					 
+		</div>
+	</div>	
+
+</div>
+
+
+{% endblock body %}

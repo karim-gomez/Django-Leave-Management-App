@@ -1,0 +1,16 @@
+{% extends 'DjangoApp/base.html' %}
+
+{% load static %}
+
+{% block head %} 
+<title>Dashboard</title>
+{% endblock %}
+
+{% block body %}
+
+{%  include 'DjangoApp/messages.html' %}
+{%  include 'DjangoApp/status.html' %}
+
+
+
+{% endblock body %}
