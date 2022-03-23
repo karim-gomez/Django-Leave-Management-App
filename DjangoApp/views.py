@@ -25,9 +25,9 @@ def dashboard(request):
         users=Customer.objects.all().count()
         #same as above, however, we used a regular for loop to go over the leaveReport model.
         total_leaves=leaveReport.objects.all()
-        new=0
-        total=0 
-        confirm=0
+	
+        new,total,confirm=0,0,0
+	
         for i in total_leaves:
             if i.leave_status=="pending":
                 new+=1
